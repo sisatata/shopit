@@ -70,7 +70,6 @@ exports.updateProduct = catchAsyncErrors(async (req,res,next)=>{
 // access admin
 
 exports.deleterProduct = catchAsyncErrors(async (req,res,next)=>{
-    console.log(req.body)
     const product = await Product.findById(req.params.id);
     if(!product){
         return  next(new ErrorHandler('Product not found',404));
